@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% load staticfiles %} <!-- New line -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- css -->
+<link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+<link href="{% static "css/fancybox/jquery.fancybox.css"%}" rel="stylesheet"/>
+<link href="{% static "css/jcarousel.css"%}" rel="stylesheet" />
+<link href="{% static "css/flexslider.css"%}" rel="stylesheet" />
+<link href="{% static "css/style.css"%}" rel="stylesheet" />
+     <style>
+    .hidden {
+    display: none;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+   var justHidden = false;
+
+$(document).ready(function() {
+    var j;
+    $(document).mousemove(function() {
+        if (!justHidden) {
+            justHidden = false;
+            clearTimeout(j);
+            $('.bt').removeClass('hidden');
+            j = setTimeout('hide();', 1000);
+        }
+    });
+});
+
+function hide() {
+    $('.bt').addClass('hidden');
+}
+    </script>
+<style type="text/css">
+#estates:hover {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */;
+}</style>
+
+<title>Photographs</title>
+</head>
+
+<body>
+</br></br></br></br>
+<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+		<div class="row"><div>
+            <div class="container">
+<div class="row">
+<div class="col-lg-4">
+<a style="text-decoration:none;" class="bt hidden" href="/home"><h4><span class="hoverWhite">BACK</span></h4></a></div>
+<div class="col-lg-4"><a style="color: white;"><h4 style="color: white;">aa</h4></a></div>
+    </div></div>
+			<div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-9">
+                        <img src="{% static "img/3.png"%}" alt="" width="280px" height="430px" />
+<a class="btn btn-large" href="/photographs/works">
+<h4><span class="hoverWhite">COMMISSIONED WORK</span></h4></a>
+</div></div>
+
+
+             </div>
+            		<div class="col-lg-6">
+                         <div class="row">
+                             <div class="col-lg-9">
+ <img src="{% static "img/23.png"%}" alt="" width="280px" height="430px"/>
+<a class="btn btn-large" href="/photographs/projects"><h4><span class="hoverWhite">PERSONEL PROJECTS</span></h4></a></div></div>
+
+
+
+
+             </div>
+        </div></div></section>
+</body>
+</html>

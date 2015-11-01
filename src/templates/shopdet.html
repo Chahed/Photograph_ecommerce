@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        {% load staticfiles %} <!-- New line -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- css -->
+<link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+<link href="{% static "css/fancybox/jquery.fancybox.css"%}" rel="stylesheet"/>
+<link href="{% static "css/jcarousel.css"%}" rel="stylesheet" />
+<link href="{% static "css/flexslider.css"%}" rel="stylesheet" />
+<link href="{% static "css/style.css"%}" rel="stylesheet" />
+        	<script src="{% static "js/simpleCart.js" %}" type="text/javascript" charset="utf-8"></script>
+
+	<!--Make a new cart instance with your paypal login email-->
+	<script type="text/javascript">
+		simpleCart = new cart("hedi.chahed.2i@gmail.com");
+	</script>
+
+	<!--CSS for the Cart. Customize anything you damn well please.
+		Use Firebug or Webkit's Element Inspector to get a more
+		indepth idea of what simpleCart Generates.
+	-->
+    <style>
+    .hidden {
+    display: none;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+   var justHidden = false;
+
+$(document).ready(function() {
+    var j;
+    $(document).mousemove(function() {
+        if (!justHidden) {
+            justHidden = false;
+            clearTimeout(j);
+            $('.bt').removeClass('hidden');
+            j = setTimeout('hide();', 1000);
+        }
+    });
+});
+
+function hide() {
+    $('.bt').addClass('hidden');
+}
+    </script>
+	<style>
+		.cartHeaders,.totalRow{display:none;}
+		.simpleCart_items{
+			overflow-y:auto;
+			overflow-x:hidden;
+			height:100px;
+			width:250px;
+			margin-bottom:20px;
+		}
+		.itemContainer{
+			clear:both;
+			width:229px;
+			padding:11px 0;
+			font-size:11px;
+		}
+		.itemImage{
+			float:left;
+			width:60px;
+		}
+		.itemName{
+			float:left;
+			width:85px;
+		}
+		.itemPrice{
+			float:left;
+			width:85px;
+			color:#fff;
+		}
+		.itemQuantity{
+			float:left;
+			width:33px;
+			margin-top:-12px;
+			vertical-align:middle;
+            color:#fff;
+		}
+		.itemQuantity input{
+			width:20px;
+			border:1px solid #fff;
+			padding:3px 2px;
+		}
+
+		.itemTotal{
+			float:left;
+			color:#fff;
+			margin-top:-6px
+		}
+	</style>
+
+<title>{{ fm.titre }}</title>
+</head>
+
+<body>
+</br></br></br></br>
+<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+
+<div class="container">
+<div class="row">
+<div class="col-lg-4">
+<a style="text-decoration:none;" class="bt hidden" href="/shop"><h4><span class="hoverWhite">BACK</span></h4></a></div>
+<div class="col-lg-4"><a style="color: white;"><h4 style="color: white;">aa</h4></a></div>
+    </div></div>
+
+        <div class="row">
+
+
+
+                        <div class="col-lg-6">
+
+
+                        <img src="{{ fm.image.url }}" >
+
+
+
+                    </div>
+
+            <div class="col-lg-6">
+            <pre style="background-color:#fff ; border-color: #fff">
+            <h4 style="margin-top: 0px!important; margin-bottom: 0px!important;">{{ fm.titre }} </h4>
+
+            <h5 style="margin-top: 0px!important; margin-bottom: 0px!important;">{{ fm.texte }}<a style="color:black; font-weight: bold ; " class="btn btn-large" href="#" onclick="simpleCart.add('name={{ fm.titre }}','price={{ fm.prix }}');return false;"><span class="hoverWhite"> add to bascket</span></a></h5></pre>
+
+
+
+                </br></br></br></br>
+
+                <h5><a style="color:#000" href="/shop/delivery" ><span class="hoverWhite">CHECKOUT</span></a></h5>
+                <h6 style="color: #555555; margin-top: 0px!important; margin-bottom: 0px!important;margin-left: 12px;">BASCKET <a style="color:#000" href="#" class="simpleCart_empty"><span class="hoverWhite">x</span></a></h6>
+
+
+				<!--Add a Div with the class "simpleCart_items" to show your shopping cart area.-->
+                <div id="sidebar">
+				<div style=" color: #555555!important; font-weight:bold;margin-left: 12px;margin-bottom: 0px!important;" class="simpleCart_items" >
+				</div></div>
+				<!--Here's the Links to Checkout and Empty Cart-->
+
+
+				</div>
+
+                </div></div>
+
+
+</section>
+</body>
+</html>

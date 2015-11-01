@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        {% load staticfiles %} <!-- New line -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- css -->
+<link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+<link href="{% static "css/fancybox/jquery.fancybox.css"%}" rel="stylesheet"/>
+<link href="{% static "css/jcarousel.css"%}" rel="stylesheet" />
+<link href="{% static "css/flexslider.css"%}" rel="stylesheet" />
+<link href="{% static "css/style.css"%}" rel="stylesheet" />
+     <style>
+    .hidden {
+    display: none;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+   var justHidden = false;
+
+$(document).ready(function() {
+    var j;
+    $(document).mousemove(function() {
+        if (!justHidden) {
+            justHidden = false;
+            clearTimeout(j);
+            $('.btn').removeClass('hidden');
+            j = setTimeout('hide();', 1000);
+        }
+    });
+});
+
+function hide() {
+    $('.btn').addClass('hidden');
+}
+    </script>
+<title>Films</title>
+</head>
+
+<body>
+</br></br></br></br>
+<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+
+<a class="btn hidden" href="/photographs"><h4><span class="hoverWhite">BACK</span></h4></a>
+
+        <div class="row">
+                   {% for c in photos %}
+
+
+                        <div class="col-lg-3">
+
+
+                        <img src="{{ c.image.url }}" width="200px" height="300px">
+
+
+                     <a href="{% url "home.views.consulter" c.id %}"><h4>{{ c.titre }} </h4></a>
+                    </div>
+
+
+
+                {% endfor %}</div>
+
+
+</div></div></section>
+</body>
+</html>

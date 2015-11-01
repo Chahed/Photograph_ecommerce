@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %} <!-- New line -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+<link href="{% static "css/fancybox/jquery.fancybox.css"%}" rel="stylesheet"/>
+<link href="{% static "css/jcarousel.css"%}" rel="stylesheet" />
+<link href="{% static "css/flexslider.css"%}" rel="stylesheet" />
+<link href="{% static "css/style.css"%}" rel="stylesheet" />
+    	<script src="{% static "js/simpleCart.js" %}" type="text/javascript" charset="utf-8"></script>
+
+	<!--Make a new cart instance with your paypal login email-->
+	<script type="text/javascript">
+		simpleCart = new cart("hedi.chahed.2i@gmail.com");
+	</script>
+
+	<!--CSS for the Cart. Customize anything you damn well please.
+		Use Firebug or Webkit's Element Inspector to get a more
+		indepth idea of what simpleCart Generates.
+	-->
+     <style>
+    .hidden {
+    display: none;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+   var justHidden = false;
+
+$(document).ready(function() {
+    var j;
+    $(document).mousemove(function() {
+        if (!justHidden) {
+            justHidden = false;
+            clearTimeout(j);
+            $('.bt').removeClass('hidden');
+            j = setTimeout('hide();', 1000);
+        }
+    });
+});
+
+function hide() {
+    $('.bt').addClass('hidden');
+}
+    </script>
+	<style>
+		.cartHeaders,.totalRow{display:none;}
+		.simpleCart_items{
+			overflow-y:auto;
+			overflow-x:hidden;
+			height:324px;
+			width:243px;
+			margin-bottom:20px;
+		}
+		.itemContainer{
+			clear:both;
+			width:229px;
+			padding:11px 0;
+			font-size:11px;
+		}
+		.itemImage{
+			float:left;
+			width:60px;
+		}
+		.itemName{
+			float:left;
+			width:85px;
+		}
+		.itemPrice{
+			float:left;
+			width:85px;
+			color:#418932;
+		}
+		.itemQuantity{
+			float:left;
+			width:33px;
+			margin-top:-12px;
+			vertical-align:middle;
+		}
+		.itemQuantity input{
+			width:20px;
+			border:1px solid #ccc;
+			padding:3px 2px;
+		}
+
+		.itemTotal{
+			float:left;
+			color:#c23f26;
+			margin-top:-6px
+		}
+	</style>
+<title>Shop</title>
+</head>
+
+<body>
+</br></br></br></br>
+<section id="featured">
+
+<div class="container">
+	<!-- start slider -->
+	<div class="container">
+<div class="row">
+<div class="col-lg-4">
+<a style="text-decoration:none;" class="bt hidden" href="/home"><h4><span class="hoverWhite">BACK</span></h4></a></div>
+<div class="col-lg-4"><a style="color: white;"><h4 style="color: white;">aa</h4></a></div>
+    </div></div>
+
+        <div class="row">
+                   {% for c in shop %}
+
+
+                        <div class="col-lg-3">
+
+
+                        <img src="{{ c.image.url }}" width="250px" height="350px">
+
+
+                    <a class="btn btn-large" href="{% url "home.views.consultershop" c.id  %}"><h5 style="margin-top: 0px!important;
+    margin-bottom: 0px!important;"><span class="hoverWhite">{{ c.titre }}</span></h5></a>
+
+                     <h5 style="margin-top: 0px!important;
+    margin-bottom: 0px!important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ c.year }}</h5>
+                        <h6 style="margin-top: 5px!important;
+    margin-bottom: 0px!important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ c.prix }}$</h6>
+
+
+
+
+
+                          </div>
+
+
+
+                {% endfor %}</div></div>
+
+
+</div>
+</section>
+
+</body>
+</html>

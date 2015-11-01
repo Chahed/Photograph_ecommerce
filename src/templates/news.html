@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  {% load staticfiles %} <!-- New line -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!-- css -->
+<link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet" />
+<link href="{% static "css/fancybox/jquery.fancybox.css"%}" rel="stylesheet"/>
+<link href="{% static "css/jcarousel.css"%}" rel="stylesheet" />
+<link href="{% static "css/flexslider.css"%}" rel="stylesheet" />
+<link href="{% static "css/style.css"%}" rel="stylesheet" />
+     <style>
+    .hidden {
+    display: none;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+   var justHidden = false;
+
+$(document).ready(function() {
+    var j;
+    $(document).mousemove(function() {
+        if (!justHidden) {
+            justHidden = false;
+            clearTimeout(j);
+            $('.btn').removeClass('hidden');
+            j = setTimeout('hide();', 1000);
+        }
+    });
+});
+
+function hide() {
+    $('.btn').addClass('hidden');
+}
+    </script>
+<title>News</title>
+
+</head>
+
+<body>
+
+</br></br>
+<section id="featured">
+	<!-- start slider -->
+	<div class="container">
+
+
+
+        <div class="row">
+
+
+
+                        <div class="col-lg-3" >
+                            <div id="menus">
+                             </br></br></br></br>
+                            <h2>NEWS</h2>
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<a class="btn hidden" href="/home"><h4><span class="hoverWhite">BACK</span></h4></a></div>
+</div>
+            <div class="col-lg-6">
+                <h6>
+
+LOUIS VUITTON ‘15
+</br>/ POP PRE-FALL</h6>
+
+<h6>CELINE ‘15 / POP PRE-FALL</h6>
+
+<h6>SLOVAK NATIONAL GALLERY 365 MAG</br>
+Preview of the new 365 mag with cover picture and interview by Bruno Osif</h6>
+
+<h6>THE NEW YORK TIMES STYLE MAGAZINE T</br>
+Points of Interest</h6>
+
+<h6>POP MAGAZINE ISSUE 32</br>
+Pop Girl</h6>
+
+<h6>PULLTHEMETAL</br>
+Shots for Pull&Bear official magazine blog</h6>
+
+<h6>POP MAGAZINE ISSUE 31</br>
+Pop Riviera</br>
+Photography Bruno Osif</br>
+Fashion Ekaterina Skurikhina</h6>
+
+<h6>WALL STREET INTERNATIONAL</br>
+Article in Wall Street International about</br>
+L ND N exhibition at Zahorian & Co. Gallery where Alter was exhibited.</h6>
+
+<h6>MEDFILM FESTIVAL</br>
+Film Alter selected for the 20th Medfilm Festival 2014 in Rome under section New Europe.
+
+<h6>ZAHORIAN & co GALLERY</br>
+Film Alter will be screened at forthcoming ZAHORIAN&co GALLERY group show in June 2014.</h6>
+
+<h6>67 FESTIVAL DE CANNES</br>
+Film Alter selected at the Short Film Corner during Cannes Film Festival 67th</h6>
+
+<h6>THEPOP.COM</br>
+Outtakes from POP Issue 30′s POP Fetish!</br>
+Photography Bruno Osif</br><
+Fashion & Direction Ekaterina Skurikhina and Sasa Stucin</h6>
+
+<h6>POP MAGAZINE ISSUE 30</br>
+Pop Fetish</br>
+Photography Bruno Osif</br>
+Fashion & Direction Ekaterina Skurikhina and Sasa Stucin</h6>
+
+<h6>POP MAGAZINE ISSUE 30/2</br>
+Miu Miu Weekend</br>
+Photography Bruno Osif and Sasa Stucin</br>
+Fashion Ekaterina Skurikhina</h6>
+
+<h6>THE NEW BRITISH</br>
+The New British about film Alter</h6>
+
+<h6>POP MAGAZINE ISSUE 29</br>
+Balenciaga</br>
+Photography Bruno Osif and Ekaterina Skurikhina</br>
+Fashion Ekaterina Skurikhina</h6>
+
+<h6>STOLEN LEICA!!</br>
+Leica m7 + Summicron f2/35mm - serial numbers:</br>
+2786212, 3681879, Thanks for any info.</h6>
+
+<h6>65 FESTIVAL DE CANNES</br>
+Film Room 4024 selected at the Short Film Corner during Cannes Film Festival 65th </h6></div></div></div></section>
+
+</body>
+</html>
